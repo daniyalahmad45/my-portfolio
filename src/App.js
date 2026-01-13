@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Github, Linkedin, Mail, Briefcase, User, FileText, Sun, Moon, MapPin, ExternalLink, Youtube, Download } from 'lucide-react';
 
 export default function Portfolio() {
-  const [activeTab, setActiveTab] = useState('resume');
+  const [activeTab, setActiveTab] = useState('about');
   const [darkMode, setDarkMode] = useState(true);
 
   // Custom cursor effect
