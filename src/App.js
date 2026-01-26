@@ -769,6 +769,14 @@ export default function Portfolio() {
           </div>
         </div>
       </div>
+
+      <footer className={`${darkMode ? 'bg-gray-800/50 border-gray-700' : 'bg-white/50 border-gray-200'} backdrop-blur-md border-t py-6 relative z-10`}>
+        <div className="container mx-auto px-6 text-center">
+          <p className={`${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+            Made by <span className="text-purple-400 font-semibold">Daniyal Ahmad</span>
+          </p>
+        </div>
+      </footer>
     </div>
   );
 }
