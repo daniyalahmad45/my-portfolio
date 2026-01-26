@@ -27,8 +27,8 @@ export default function Portfolio() {
       const distX = mouseX - followerX;
       const distY = mouseY - followerY;
       
-      followerX += distX * 0.1;
-      followerY += distY * 0.1;
+      followerX += distX * 0.15;
+      followerY += distY * 0.15;
       
       follower.style.left = followerX + 'px';
       follower.style.top = followerY + 'px';
