@@ -161,8 +161,38 @@ export default function Portfolio() {
     return null;
   };
 
-  const renderContent = () => {
-    switch(activeTab) {
+  const sections = [
+    { id: 'about', label: 'About', Icon: User },
+    { id: 'projects', label: 'Projects', Icon: Briefcase },
+    { id: 'resume', label: 'Resume', Icon: FileText },
+    { id: 'contact', label: 'Contact', Icon: Mail },
+  ];
+
+  // Highlight the nav tab for whichever section is currently in view
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActiveTab(entry.target.id);
+        });
+      },
+      { rootMargin: '-40% 0px -55% 0px' }
+    );
+    sections.forEach(({ id }) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const scrollToSection = (id) => {
+    setActiveTab(id);
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  const renderContent = (section) => {
+    switch(section) {
       case 'about':
         return (
           <div className="space-y-6 relative z-10">
@@ -644,15 +674,10 @@ export default function Portfolio() {
         <div className="container mx-auto px-6 py-3">
           <div className="flex items-center justify-between">
             <div className="flex gap-1.5">
-              {[
-                { id: 'about', label: 'About', Icon: User },
-                { id: 'projects', label: 'Projects', Icon: Briefcase },
-                { id: 'resume', label: 'Resume', Icon: FileText },
-                { id: 'contact', label: 'Contact', Icon: Mail },
-              ].map(({ id, label, Icon }) => (
+              {sections.map(({ id, label, Icon }) => (
                 <button
                   key={id}
-                  onClick={() => setActiveTab(id)}
+                  onClick={() => scrollToSection(id)}
                   className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                     activeTab === id
                       ? 'bg-accent-500/10 text-accent-400'
@@ -676,7 +701,7 @@ export default function Portfolio() {
 
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          <div className={`lg:col-span-1 ${darkMode ? 'bg-slate-800' : 'bg-white'} rounded-2xl p-8 h-fit shadow-lg border-l-4 border-accent-500 relative z-10`}>
+          <div className={`lg:col-span-1 ${darkMode ? 'bg-slate-800' : 'bg-white'} rounded-2xl p-8 h-fit shadow-lg border-l-4 border-accent-500 relative z-10 lg:sticky lg:top-24`}>
             <div className="flex flex-col items-center">
               <div className="w-48 h-48 rounded-full overflow-hidden border-2 border-accent-500/70 shadow-lg shadow-accent-500/20 mb-6 bg-slate-700">
                 <img
@@ -748,8 +773,12 @@ export default function Portfolio() {
             </div>
           </div>
 
-          <div className="lg:col-span-3 relative z-10">
-            {renderContent()}
+          <div className="lg:col-span-3 relative z-10 space-y-16">
+            {sections.map(({ id }) => (
+              <section key={id} id={id} className="scroll-mt-24">
+                {renderContent(id)}
+              </section>
+            ))}
           </div>
         </div>
       </div>
