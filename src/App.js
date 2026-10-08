@@ -67,6 +67,7 @@ export default function Portfolio() {
     'Python': { devicon: 'devicon-python-plain colored', lucide: null, color: null },
     'Java': { devicon: 'devicon-java-plain colored', lucide: null, color: null },
     'JavaScript': { devicon: 'devicon-javascript-plain colored', lucide: null, color: null },
+    'TypeScript': { devicon: 'devicon-typescript-plain colored', lucide: null, color: null },
     'C': { devicon: 'devicon-c-plain colored', lucide: null, color: null },
     'C++': { devicon: 'devicon-cplusplus-plain colored', lucide: null, color: null },
     'Bash': { devicon: 'devicon-bash-plain', lucide: null, color: null },
@@ -83,6 +84,7 @@ export default function Portfolio() {
     // Web, UI & Systems
     'React': { devicon: 'devicon-react-original colored', lucide: null, color: null },
     'Node.js': { devicon: 'devicon-nodejs-plain colored', lucide: null, color: null },
+    'Express': { devicon: 'devicon-express-original', lucide: null, color: null },
     'REST APIs': { devicon: null, lucide: 'Network', color: '#3498DB' },
     'Tailwind CSS': { devicon: 'devicon-tailwindcss-plain colored', lucide: null, color: null },
     'UX/UI Design Principles': { devicon: null, lucide: 'Palette', color: '#E91E63' },
@@ -105,7 +107,9 @@ export default function Portfolio() {
 
     // Tools & Platforms
     'Git/GitHub': { devicon: 'devicon-github-original', lucide: null, color: null },
+    'HubSpot API': { devicon: null, lucide: 'Network', color: '#FF7A59' },
     'Linux': { devicon: 'devicon-linux-plain', lucide: null, color: null },
+    'Render': { devicon: null, lucide: 'Server', color: '#46E3B7' },
     'VS Code': { devicon: 'devicon-vscode-plain colored', lucide: null, color: null },
     'Vercel': { devicon: null, lucide: 'Triangle', color: '#A855F7' },
     'Streamlit': { devicon: null, lucide: 'Server', color: '#FF4B4B' }
@@ -113,13 +117,13 @@ export default function Portfolio() {
 
   const skills = {
     technical: [
-      "Python", "Java", "JavaScript", "C", "C++", "Bash", "HTML", "CSS"
+      "Python", "Java", "JavaScript", "TypeScript", "C", "C++", "Bash", "HTML", "CSS"
     ],
     academicLanguages: [
       "Lisp", "Rust", "Haskell", "Smalltalk", "Elixir"
     ],
     webAndSystems: [
-      "React", "Node.js", "REST APIs", "Tailwind CSS", "UX/UI Design Principles"
+      "React", "Node.js", "Express", "REST APIs", "Tailwind CSS", "UX/UI Design Principles"
     ],
     aiMlAndData: [
       "Retrieval-Augmented Generation (RAG)", "LLM APIs (Google Gemini)", "Vector Databases (ChromaDB)", "Sentence Transformers", "Computer Vision", "OpenCV", "NumPy", "Pandas", "Matplotlib"
@@ -128,7 +132,7 @@ export default function Portfolio() {
       "Arduino Uno R3", "Sensor/Actuator Integration", "Serial Communication"
     ],
     toolsAndPlatforms: [
-      "Git/GitHub", "Linux", "VS Code", "Vercel", "Streamlit"
+      "Git/GitHub", "HubSpot API", "Linux", "Render", "VS Code", "Vercel", "Streamlit"
     ]
   };
 
@@ -471,10 +475,17 @@ export default function Portfolio() {
               <h3 className="text-xl font-bold mb-4">Experience</h3>
               <div className="space-y-6">
                 <div>
-                  <h4 className="font-semibold text-lg">Sales & Business Development | Tahpin Inc. (Venture for Canada Intrapreneurship Program)</h4>
-                  <p className="text-accent-400 mb-2">July 2026 - Present</p>
+                  <h4 className="font-semibold text-lg">Research Lead | Pawsknow, Riipen Labs Project</h4>
+                  <p className="text-accent-400 mb-2">August 2026</p>
                   <p className={`${darkMode ? 'text-slate-300' : 'text-slate-600'}`}>
-                    Supporting Tahpin Inc.'s go-to-market initiative on search optimization for the tourism and retail space through outreach to local businesses. Building and maintaining a sales pipeline, including prospect research, outreach tracking, and documentation templates. Participating in a student team for Venture for Canada's Responsible AI Adoption Challenge, identifying a workplace process suited to a responsible AI solution.
+                    Led market and competitor research for Pawsknow, a Vancouver startup building a color-changing diagnostic cat litter for feline health monitoring, benchmarking against Arm & Hammer, PrettyLitter, and Fresh Step/Dr. Elsey's. Delivered Canadian pet industry data that informed a resource-efficient, omni-channel brand strategy.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-lg">Sales & Business Development | Tahpin Inc. (Venture for Canada Intrapreneurship Program)</h4>
+                  <p className="text-accent-400 mb-2">July 2026 – August 2026</p>
+                  <p className={`${darkMode ? 'text-slate-300' : 'text-slate-600'}`}>
+                    Built a sales pipeline for Tahpin Inc. through prospect research to support go-to-market outreach. Served as AI Intelligence Lead on a student team for VFC's Responsible AI Adoption Challenge, building a workflow tool in React, TypeScript, and Express. Owned the AI pipeline end-to-end: prompt design, structured JSON output, and a deterministic weighted scoring system across six criteria, then benchmarked GPT, Claude, and Gemini to recommend Gemini for the MVP. Integrated a live HubSpot CRM handoff gated behind human approval, keeping a person in the loop before outreach.
                   </p>
                 </div>
                 <div>
