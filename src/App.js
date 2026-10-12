@@ -65,6 +65,37 @@ export default function Portfolio() {
     }
   ];
 
+  // Newest first. `{mode}` in a logo path is swapped for 'dark' or 'light'.
+  const certifications = [
+    {
+      title: "Riipen Labs Project Certificate",
+      detail: "Welfare Pet Food and Supplies Corp. Customer Experience Brief — August 2026",
+      logo: "/logos/riipen-labs-{mode}.png",
+      logoAlt: "Riipen Labs logo",
+      url: "/certificates/riipen-labs-welfare-pet-food.pdf"
+    },
+    {
+      title: "IBM SkillsBuild: Collaboration and Team Dynamics",
+      detail: "Completion Certificate — August 2026",
+      logo: "/logos/ibm.svg",
+      logoAlt: "IBM logo",
+      url: "/certificates/ibm-skillsbuild-collaboration-team-dynamics.pdf"
+    },
+    {
+      title: "Riipen Level UP Project Certificate",
+      detail: "Custom Software Scope Development for Fraser Delivery — June 2026",
+      logo: "/logos/riipen-levelup-{mode}.png",
+      logoAlt: "Riipen Level UP logo",
+      url: "/certificates/riipen-level-up-fraser-delivery.pdf"
+    },
+    {
+      title: "CAE Immersion Program 2026",
+      detail: "Certificate — May 2026",
+      logo: "/logos/cae-{mode}.png",
+      logoAlt: "CAE logo"
+    }
+  ];
+
   // Complete tech icons mapping with devicon AND lucide fallbacks
   const techIcons = {
     // Programming & Markup
@@ -536,15 +567,33 @@ export default function Portfolio() {
                   <Award size={22} className="text-accent-400" />
                   <h3 className="text-xl font-bold">Certifications</h3>
                 </div>
-                <div className="space-y-4">
-                  <div>
-                    <h4 className="font-semibold">CAE Immersion Program 2026</h4>
-                    <p className={`text-sm ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>Certificate — May 2026</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold">Riipen Level UP Project Certificate</h4>
-                    <p className={`text-sm ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>Fraser Delivery Software Scope Development — May 2026</p>
-                  </div>
+                <div className="space-y-5">
+                  {certifications.map((cert) => (
+                    <div key={cert.title} className="flex items-start gap-4">
+                      <div className="w-16 h-10 shrink-0 flex items-center justify-center">
+                        <img
+                          src={cert.logo.replace('{mode}', darkMode ? 'dark' : 'light')}
+                          alt={cert.logoAlt}
+                          className="max-h-10 max-w-full w-auto"
+                        />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold">{cert.title}</h4>
+                        <p className={`text-sm ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>{cert.detail}</p>
+                        {cert.url && (
+                          <a
+                            href={cert.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 mt-1 text-sm text-accent-400 hover:text-accent-300 transition-colors"
+                          >
+                            <ExternalLink size={14} />
+                            View certificate
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
 
@@ -554,6 +603,11 @@ export default function Portfolio() {
                   <h3 className="text-xl font-bold">Education</h3>
                 </div>
                 <div>
+                  <img
+                    src="/logos/tmu.svg"
+                    alt="Toronto Metropolitan University logo"
+                    className="h-12 w-auto mb-3"
+                  />
                   <h4 className="font-semibold">BSc — Computer Science</h4>
                   <p className="text-accent-400 text-sm mb-2">Toronto Metropolitan University</p>
                   <p className={`text-sm ${darkMode ? 'text-slate-400' : 'text-slate-500'} mb-2`}>September 2024 – Expected 2028</p>
