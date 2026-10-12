@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Github, Linkedin, Mail, Briefcase, User, FileText, Sun, Moon, MapPin, ExternalLink, Youtube, Download, Code2, Database, Box, Brain, Eye, Network, Palette, Smartphone, Server, Zap, PackageOpen, Cpu, Sparkles, Triangle, Award, GraduationCap, Phone } from 'lucide-react';
+import { FaceRecognitionLogo, CodebaseQALogo } from './ProjectLogos';
 
 export default function Portfolio() {
   const [activeTab, setActiveTab] = useState('about');
@@ -41,6 +42,7 @@ export default function Portfolio() {
       description: "Built a Retrieval-Augmented Generation system that lets developers ask natural-language questions about an unfamiliar Python repository and get answers grounded in the actual source code. Used Python's ast module to parse repositories into structure-aware chunks (functions, classes, modules) with file/line metadata, embedded with Sentence Transformers and indexed in a persistent ChromaDB vector store. Implemented semantic retrieval and a grounded generation pipeline with Google Gemini that cites exact file and line sources and refuses to answer outside retrieved context, with retry/backoff for API errors. Built a Streamlit chat interface with source inspection and history; evaluated on 15 hand-written questions, reaching 14 correct, 1 partial, and zero hallucinations, then closed a retrieval gap found during evaluation.",
       techStack: ["Python", "Vector Databases (ChromaDB)", "Sentence Transformers", "LLM APIs (Google Gemini)", "Streamlit"],
       github: "https://github.com/daniyalahmad45/code-rag-assistant",
+      Logo: CodebaseQALogo,
       demo: "https://www.youtube.com/watch?v=yogSAyDYefs"
     },
     {
@@ -49,6 +51,7 @@ export default function Portfolio() {
       description: "Built a real-time facial recognition attendance system using Python, OpenCV, and the face_recognition library to detect and identify individuals from a live camera feed. Integrated an Arduino Uno R3 for physical feedback: green LED and a servo-controlled gate on a recognized face, red LED and buzzer alert on an unrecognized face.",
       techStack: ["Python", "OpenCV", "Computer Vision", "Arduino Uno R3", "Sensor/Actuator Integration"],
       github: "https://github.com/daniyalahmad45/face-recognition-attendance",
+      Logo: FaceRecognitionLogo,
       demo: "https://www.youtube.com/watch?v=90mUXaag0rU"
     },
     {
@@ -325,7 +328,12 @@ export default function Portfolio() {
                 key={index}
                 className={`${darkMode ? 'bg-slate-800 border-slate-700' : 'bg-white border-slate-200'} rounded-2xl p-8 shadow-lg border border-t-4 border-t-accent-500 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative z-10`}
               >
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                <div className="flex items-start gap-4 mb-4">
+                  {project.Logo && (
+                    <div className={`${darkMode ? 'bg-slate-700/60 text-slate-50' : 'bg-slate-100 text-slate-900'} shrink-0 rounded-xl p-2`}>
+                      <project.Logo size={56} />
+                    </div>
+                  )}
                   <div>
                     <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
                     {project.subtitle && (
