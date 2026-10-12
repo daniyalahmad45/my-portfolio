@@ -485,9 +485,9 @@ export default function Portfolio() {
               <div className="space-y-6">
                 <div>
                   <img
-                    src={`/logos/riipen-${darkMode ? 'dark' : 'light'}.svg`}
-                    alt="Riipen logo"
-                    className="h-7 w-auto mb-3"
+                    src={`/logos/riipen-labs-${darkMode ? 'dark' : 'light'}.png`}
+                    alt="Riipen Labs logo"
+                    className="h-9 w-auto mb-3"
                   />
                   <h4 className="font-semibold text-lg">Research Lead | Pawsknow, Riipen Labs Project</h4>
                   <p className="text-accent-400 mb-2">August 2026</p>
@@ -508,11 +508,19 @@ export default function Portfolio() {
                   </p>
                 </div>
                 <div>
-                  <img
-                    src={`/logos/riipen-${darkMode ? 'dark' : 'light'}.svg`}
-                    alt="Riipen logo"
-                    className="h-7 w-auto mb-3"
-                  />
+                  <div className="flex items-center gap-3 mb-3">
+                    <img
+                      src={`/logos/riipen-${darkMode ? 'dark' : 'light'}.svg`}
+                      alt="Riipen logo"
+                      className="h-7 w-auto"
+                    />
+                    <span className={`h-8 w-px ${darkMode ? 'bg-slate-500' : 'bg-slate-300'}`} />
+                    <img
+                      src={`/logos/riipen-levelup-${darkMode ? 'dark' : 'light'}.png`}
+                      alt="Riipen Level UP logo"
+                      className="h-11 w-auto"
+                    />
+                  </div>
                   <h4 className="font-semibold text-lg">Software Scope Development | Fraser Delivery, Riipen Level UP Project</h4>
                   <p className="text-accent-400 mb-2">May 2026</p>
                   <p className={`${darkMode ? 'text-slate-300' : 'text-slate-600'}`}>
