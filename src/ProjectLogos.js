@@ -60,6 +60,38 @@ export const FaceRecognitionLogo = ({ size = 64, className = '' }) => (
   </svg>
 );
 
+// Browser window with a profile layout inside. Uses currentColor for the content,
+// so it follows the text color in light/dark mode.
+export const PortfolioLogo = ({ size = 64, className = '' }) => (
+  <svg
+    viewBox="0 0 64 64"
+    width={size}
+    height={size}
+    className={className}
+    fill="none"
+    role="img"
+    aria-label="Personal Portfolio Website logo"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <defs>
+      <linearGradient id="pf-g" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stopColor="#A855F7" />
+        <stop offset="1" stopColor="#6366F1" />
+      </linearGradient>
+    </defs>
+    <rect x="5" y="9" width="54" height="46" rx="9" stroke="url(#pf-g)" strokeWidth="4" />
+    <path d="M5 18a9 9 0 0 1 9-9h36a9 9 0 0 1 9 9v3H5z" fill="url(#pf-g)" />
+    <circle cx="12.5" cy="15" r="1.8" fill="#fff" opacity=".9" />
+    <circle cx="18" cy="15" r="1.8" fill="#fff" opacity=".7" />
+    <circle cx="23.5" cy="15" r="1.8" fill="#fff" opacity=".5" />
+    <circle cx="20" cy="33" r="6" fill="currentColor" />
+    <path d="M11 47c0-5 4-8 9-8s9 3 9 8z" fill="currentColor" />
+    <rect x="34" y="29" width="17" height="4" rx="2" fill="url(#pf-g)" />
+    <rect x="34" y="37" width="13" height="3" rx="1.5" fill="currentColor" opacity=".55" />
+    <rect x="34" y="43" width="15" height="3" rx="1.5" fill="currentColor" opacity=".55" />
+  </svg>
+);
+
 export const CodebaseQALogo = ({ size = 64, className = '' }) => (
   <svg
     viewBox="0 0 64 64"

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Github, Linkedin, Mail, Briefcase, User, FileText, Sun, Moon, MapPin, ExternalLink, Youtube, Download, Code2, Database, Box, Brain, Eye, Network, Palette, Smartphone, Server, Zap, PackageOpen, Cpu, Sparkles, Triangle, Award, GraduationCap, Phone } from 'lucide-react';
-import { FaceRecognitionLogo, CodebaseQALogo } from './ProjectLogos';
+import { FaceRecognitionLogo, CodebaseQALogo, PortfolioLogo } from './ProjectLogos';
 
 export default function Portfolio() {
   const [activeTab, setActiveTab] = useState('about');
@@ -60,6 +60,7 @@ export default function Portfolio() {
       description: "Designed and built a personal portfolio site with React and Tailwind CSS, deployed live on Vercel, with responsive, component-based layouts.",
       techStack: ["React", "JavaScript", "Tailwind CSS"],
       github: "https://github.com/daniyalahmad45/my-portfolio",
+      Logo: PortfolioLogo,
       demo: "#"
     }
   ];
