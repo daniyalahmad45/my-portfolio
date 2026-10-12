@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+<p align="center">
+  <img src="docs/logo.svg" alt="Personal Portfolio Website logo" width="120" height="120">
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">Daniyal Ahmad — Personal Portfolio</h1>
 
-## Available Scripts
+<p align="center">
+  My personal portfolio site: projects, skills, experience and resume, all on one page.
+</p>
 
-In the project directory, you can run:
+<p align="center">
+  <img alt="React" src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white">
+  <img alt="Tailwind CSS" src="https://img.shields.io/badge/Tailwind_CSS-38BDF8?logo=tailwindcss&logoColor=white">
+  <img alt="Deployed on Vercel" src="https://img.shields.io/badge/Deployed_on-Vercel-000000?logo=vercel&logoColor=white">
+</p>
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## About
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+A single-page portfolio built with React and Tailwind CSS. The page scrolls through each section, and a tab bar at the top jumps between them.
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Sections:** About, Projects, Resume (skills, experience, education, certifications) and Contact
+- **Project cards** with a logo, tech stack, and links to the GitHub repo and demo video
+- **Downloadable resume** as a PDF
+- **Light and dark mode** toggle
+- **Responsive layout** that works on phones and desktops
+- **Cursor spotlight** effect that follows the mouse
 
-### `npm run build`
+## Tech stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| Area | Tools |
+| --- | --- |
+| Framework | React (Create React App) |
+| Styling | Tailwind CSS |
+| Icons | Lucide React, React Icons, Devicon |
+| Hosting | Vercel (deploys automatically from `main`) |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Project structure
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+public/
+  Daniyal Ahmad Resume.pdf   Resume linked from the download button
+  daniyal_pic.png            Profile photo
+src/
+  App.js                     Page layout, sections, and all site content
+  ProjectLogos.js            SVG logos shown on the project cards
+docs/
+  logo.svg                   Logo used in this README
+```
 
-### `npm run eject`
+## Running locally
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+You need [Node.js](https://nodejs.org/) installed.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+git clone https://github.com/daniyalahmad45/my-portfolio.git
+cd my-portfolio
+npm install
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The site opens at [http://localhost:3000](http://localhost:3000) and reloads when you save a change.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+To build a production version, run `npm run build`. The output goes to the `build/` folder.
 
-## Learn More
+## Updating content
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Most of the content lives in data objects near the top of `src/App.js`:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Profile and links:** `profileData`
+- **Projects:** `projects` (each one can set a `Logo` from `src/ProjectLogos.js`)
+- **Skills:** `skills`, with icons set in `techIcons`
 
-### Code Splitting
+To update the resume, replace `public/Daniyal Ahmad Resume.pdf` with a new file of the same name.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Pushing to `main` redeploys the site on Vercel.
 
-### Analyzing the Bundle Size
+## Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- GitHub: [@daniyalahmad45](https://github.com/daniyalahmad45)
+- LinkedIn: [daniyalahmad-cs](https://linkedin.com/in/daniyalahmad-cs/)
+- Email: [daniyal.ahhmad45@gmail.com](mailto:daniyal.ahhmad45@gmail.com)
