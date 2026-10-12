@@ -484,6 +484,11 @@ export default function Portfolio() {
               <h3 className="text-xl font-bold mb-4">Experience</h3>
               <div className="space-y-6">
                 <div>
+                  <img
+                    src={`/logos/riipen-${darkMode ? 'dark' : 'light'}.svg`}
+                    alt="Riipen logo"
+                    className="h-7 w-auto mb-3"
+                  />
                   <h4 className="font-semibold text-lg">Research Lead | Pawsknow, Riipen Labs Project</h4>
                   <p className="text-accent-400 mb-2">August 2026</p>
                   <p className={`${darkMode ? 'text-slate-300' : 'text-slate-600'}`}>
@@ -491,6 +496,11 @@ export default function Portfolio() {
                   </p>
                 </div>
                 <div>
+                  <img
+                    src={`/logos/vfc-${darkMode ? 'dark' : 'light'}.svg`}
+                    alt="Venture for Canada logo"
+                    className="h-7 w-auto mb-3"
+                  />
                   <h4 className="font-semibold text-lg">Sales & Business Development | Tahpin Inc. (Venture for Canada Intrapreneurship Program)</h4>
                   <p className="text-accent-400 mb-2">July 2026 – August 2026</p>
                   <p className={`${darkMode ? 'text-slate-300' : 'text-slate-600'}`}>
@@ -498,6 +508,11 @@ export default function Portfolio() {
                   </p>
                 </div>
                 <div>
+                  <img
+                    src={`/logos/riipen-${darkMode ? 'dark' : 'light'}.svg`}
+                    alt="Riipen logo"
+                    className="h-7 w-auto mb-3"
+                  />
                   <h4 className="font-semibold text-lg">Software Scope Development | Fraser Delivery, Riipen Level UP Project</h4>
                   <p className="text-accent-400 mb-2">May 2026</p>
                   <p className={`${darkMode ? 'text-slate-300' : 'text-slate-600'}`}>
