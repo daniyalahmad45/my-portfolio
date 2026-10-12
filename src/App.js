@@ -553,7 +553,7 @@ export default function Portfolio() {
                     />
                   </div>
                   <h4 className="font-semibold text-lg">Software Scope Development | Fraser Delivery, Riipen Level UP Project</h4>
-                  <p className="text-accent-400 mb-2">June 2026</p>
+                  <p className="text-accent-400 mb-2">May 2026 – June 2026</p>
                   <p className={`${darkMode ? 'text-slate-300' : 'text-slate-600'}`}>
                     Conducted a needs assessment of Fraser Delivery, a Canada–India courier company, analyzing its shipment booking, tracking, and manifest processes. Authored a software functionality outline and workflow diagram, then delivered a final scope of work document with requirements, a data model, user stories, and acceptance criteria. Certificate of completion awarded.
                   </p>
